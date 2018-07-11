@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Toggle from './ToggleRenderProps';
+import Toggle from './ToggleRPC';
 import logo from './logo.svg';
 import './App.css';
 
@@ -11,27 +11,22 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">React Render Props</h1>
         </header>
-        <Toggle
-          render={({ on, toggle }) => (
+        {/* <Toggle>
+          {({ on, toggle }) => (
             <div>
-              {/* use an inline conditional */}
               {on && <h1>Show me!</h1>}
-              {/* and how do we toggle on? */}
               <button onClick={toggle}>Show / Hide</button>
             </div>
           )}
-        />
-        <h4>More stuff here, reuse toggle component below</h4>
-        <Toggle
-          render={({ on, toggle }) => (
+        </Toggle> */}
+        <Toggle>
+          {({ on, toggle }) => (
             <div>
-              {/* use an inline conditional */}
-              {on && <nav>nav item</nav>}
-              {/* and how do we toggle on? */}
-              <button onClick={toggle}>Menu</button>
+              {on && <h1>Show me!</h1>}
+              <button onClick={toggle}>Show / Hide</button>
             </div>
           )}
-        />
+        </Toggle>
       </div>
     );
   }
